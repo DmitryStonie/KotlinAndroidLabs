@@ -1,12 +1,7 @@
 package com.example.lab1
+import kotlinx.serialization.*
 
-class Valute(_id: String, _numCode: String, _charCode: String, _nominal: Int, _name: String, _value: Double, _previous: Double) {
-    private val id: String = _id
-    private val numCode: String = _numCode
-    private  val nominal: Int = _nominal
-    val charCode: String = _charCode
-    val name: String = _name
-    val value: Double = _value
-    private val previous: Double = _previous
 
+@Serializable
+data class Valute(val ID: String, val NumCode: String, val CharCode: String, val Nominal: Int, val Name: String, val Value: Double, val Previous: Double) {
 }
