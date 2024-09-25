@@ -27,8 +27,11 @@ class ValuteAdapter(context: Context, resource: Int, valutes: List<Valute>) :
 
         nameView.setText(valute.Name)
         codeView.setText(valute.CharCode)
-        valueView.setText(valute.Value.toString())
-
+        if(valute.Value / valute.Nominal < 0.01){
+            valueView.setText(String.format("%.4f ₽", (valute.Value / valute.Nominal)))
+        }else{
+            valueView.setText(String.format("%.2f ₽", (valute.Value / valute.Nominal)))
+        }
         return view
     }
 }
